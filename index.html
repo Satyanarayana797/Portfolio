@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D. Venkata Satyanarayana - Frontend Developer</title>
+
+    <style>
+        /* General Styles */
+        /* Using Inter font as a standard modern font, falling back to clean sans-serif */
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef1f5; /* Very light, professional background */
+            color: #1f2937; /* Darker, more legible text */
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px; /* Padding for mobile responsiveness */
+        }
+
+        /* Header / Hero Section */
+        header {
+            background: linear-gradient(135deg, #10b981, #059669); /* Attractive Teal-Green Gradient */
+            color: #fff;
+            padding: 5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); /* Slight angled cut for visual interest */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1.75rem;
+            margin-top: 10px;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        /* Main Content Sections */
+        main {
+            padding-top: 20px;
+            padding-bottom: 60px;
+        }
+
+        section {
+            background: #ffffff;
+            margin-bottom: 40px;
+            padding: 50px;
+            border-radius: 16px;
+            /* Subtle border and shadow for a 'floating' card effect */
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.03);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        section h2 {
+            color: #059669; /* Matching primary color */
+            text-align: center;
+            margin-top: 0;
+            font-size: 2.25rem;
+            font-weight: 700;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        /* Underline effect for H2 */
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            height: 4px;
+            width: 80px;
+            background-color: #10b981;
+            border-radius: 2px;
+        }
+
+
+        /* About Me Section */
+        #about p {
+            font-size: 1.15rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #4b5563;
+        }
+
+        /* Skills Section */
+        .skill-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill-list span {
+            background: #f3f4f6;
+            color: #1f2937;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid #d1d5db;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-list span:hover {
+            background-color: #10b981;
+            color: #fff;
+            border-color: #059669;
+            transform: scale(1.05);
+            box-shadow: 0 5px 10px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Projects Section */
+        #projects p {
+            text-align: center;
+            font-style: italic;
+            color: #6b7280;
+            font-size: 1.1rem;
+        }
+
+        /* Future Learnings Section */
+        #future-learnings ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        #future-learnings li {
+            background: #f9fafb;
+            padding: 18px 25px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            text-align: left;
+            border-left: 5px solid #059669;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s ease;
+        }
+
+        #future-learnings li:hover {
+            background-color: #eff6ff;
+        }
+
+        /* Contact Section */
+        #contact .contact-details {
+            text-align: center;
+        }
+
+        #contact .contact-details p {
+            font-size: 1.15rem;
+            margin-bottom: 30px;
+            color: #4b5563;
+        }
+        
+        #contact .contact-details a {
+            color: #10b981;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            margin: 0 15px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            padding: 10px 15px;
+            border: 2px solid #10b981;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        #contact .contact-details a:hover {
+            background-color: #10b981;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px 0;
+            background: #1f2937; /* Dark background */
+            color: #e5e7eb;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header {
+                padding: 4rem 0;
+            }
+            header h1 {
+                font-size: 2.5rem;
+            }
+            header p {
+                font-size: 1.2rem;
+            }
+            section {
+                padding: 30px 20px;
+                margin-bottom: 25px;
+            }
+            section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+            #contact .contact-details a {
+                font-size: 1.1rem;
+                margin: 5px;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>D. Venkata Satyanarayana</h1>
+            <p>Frontend Developer</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>Hello! I'm a passionate frontend developer with a strong foundation in HTML and CSS. I'm dedicated to building clean, user-friendly, and responsive websites. I'm excited to continue my learning journey and expand my skills.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skill-list">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <p>No current projects. I am focused on strengthening my foundational skills.</p>
+            </div>
+        </section>
+
+        <section id="future-learnings">
+            <div class="container">
+                <h2>Future Learings</h2>
+                <ul>
+                    <li>Frontend Frameworks (React, Angular, Vue)</li>
+                    <li>Backend Technologies (Node.js, Python)</li>
+                    <li>Databases(MySQL,MongoDB)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <div class="contact-details">
+                    <p>Feel free to reach out to me via email or connect with me on LinkedIn.</p>
+                    <a href="mailto:satyanarayana7971@gmail.com">Email: satyanarayana7971@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/venkata-satyanarayana-damam-482b71371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn:My profile</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 D. Venkata Satyanarayana. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
